@@ -1,48 +1,65 @@
+const signUpForm = document.querySelector('#signup-form');
+const loginInForm = document.querySelector('#login-form');
 
-// Function to load a page
-window.addEventListener("load", () => {
-	// get stored blog from local storage
-	blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+let clientUser = []
 
-// variable with HTML ID
+if (signUpForm && signUpForm !== "undefined") {
 
-	const title = document.getElementById("title");
-	const author = document.getElementById("author");
-	const article = document.getElementById("article");
-	const addBlogForm = document.querySelector("#blog-form");
+ signUpForm.addEventListener('submit', async function(e){
+            e.preventDefault()
 
-// Add Blog
+		const [username, password] = [
+			document.querySelector('#username').value,
+			document.querySelector('#password').value,
+			]
 
-	addBlogForm.addEventListener("submit", (e) => {
-		e.preventdefault();
-		const blog = {
-			title: e.target.title.value,
-			author: e.target.author.value,
-			article: e.target.article.value
-		};
-		// add blogs to an array of blog
-		blogs.push(blog);
-		// reset the form after submit
-		e.target.reset();
-	});
-	// call displayBlog fn after submit
-	displayBlog();
-});
+		// required & validation
+		if (!username || !password) {
+			alert("Please fill the form")
+			return
+		}
 
-// Display our Blog
+		const newUser =  {
+			username,
+			password,
+			userId: Math.random().toString(36).substring(2,10)
+		}
+		// const credentials = [...newUser]
+		// checking if user exist
+		const savedUser = JSON.parse(localStorage.getItem('form-base'))
 
-function displayBlog() {
-	// assign blogInfo to html 
-	const blogInfo = document.querySelector("blog-js");
+			username === "Adolf123" ? newUser.role = "admin" : newUser.role = "user"
+			// add newUser to array of the form-base
+			//newUser.push(form-base);
+		 	localStorage.setItem('form-base', JSON.stringify(newUser))
+		 	alert('Successfully registered')
+		 	window.location.href="login.html"
+				 
+	})
+}
 
-	// display and map the data from local storage
+ 
+if (loginInForm && loginInForm !== "undefined"){
+	loginInForm.addEventListener('submit', (e) => {
+		e.preventDefault()
+		const [username, password] = [
+			document.querySelector('#username').value,
+			document.querySelector('#password').value
+		]
+		// required & validation
+		if (!username || !password) {
+		alert("Please fill the form")
+			return
+				}
+		const savedUser = JSON.parse(localStorage.getItem('form-base'))
+		if (savedUser.username === username && savedUser.password === password) {
+			if (savedUser.role === "admin") {
+				window.location.href="admin/dashboard.html"
+			}
+			else {
+				window.location.href="blog.html"
+			}
+		}
+	})
+}
 
-	blogInfo.innerHTML = blogs
-		.map(
-			(el,index) =>
-			`<h2 class="">${el.title}</h2>
-			<div class=""><article><p>${el.article}</p></article></div>
-			<div class=""><a href=#>${el.author}</a></div>`
-			)
-		.join("");
-	}

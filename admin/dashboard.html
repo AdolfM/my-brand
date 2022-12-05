@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adolph's Resume</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div class="navbar">
-  <a class="" href="index.html#section-home">HOME</a>
-  <a href="index.html#section-about">ABOUT US</a>
-  <a href="index.html#section-Service">PORTFOLIO</a>
-  <a href="index.html#section-contact">CONTACT US</a>
+  <a class="" href="/index.html#section-home">HOME</a>
+  <a href="/index.html#section-about">ABOUT US</a>
+  <a href="/index.html#section-Service">PORTFOLIO</a>
+  <a href="/index.html#section-contact">CONTACT US</a>
   <div class="navbar-right">
-  <a href="login.html">LOG IN</a>
-  <a href="blog.html">BLOG</a>
+  <a href="/login.html">LOG IN</a>
+  <a href="/blog.html">BLOG</a>
   </div>
   </div>
   <div class="main">
@@ -24,15 +24,15 @@
 		  		<h1>DASHBOARD</h1>
 		  	</div>
 			<div class="dash-div">	
-				<form action="" id="blog-form" class="">
+				<form id="blog-form" class="">
 					<h2>WRITE NEW ARTICLE</h2>
 					<div class=""> 
 						<h3> ARTICLE TITLE:</h3>
 						<input type="text" id="title" class="dashboard-inp" name="" placeholder="ARTICLE #:.......">
 					</div>
 					<div class=""> 
-						<h3> ADD AUTHOR:</h3>
-						<input type="text" id="author" class="dashboard-inp" name="" placeholder="Author Names...">
+						<h3> ADD IMAGE:</h3>
+						<input type="file" id="img" class="dashboard-inp" accept="image/*">
 					</div>
 					<div class=""> 
 						<h3>WRITE THE ARTICLE HERE</h3>
@@ -62,6 +62,58 @@
 					</div>
 
 	</main>	
+	<script>
+		window.addEventListener("load", () => {
+	// get stored blog from local storage
+	blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+	const title = document.getElementById("title");
+	const img = document.getElementById("img");
+	const article = document.getElementById("article");
+	const addBlogForm = document.querySelector("#blog-form");
+
+	addBlogForm.addEventListener("submit", (e) => {
+		e.preventDefault();
+		const blog = {
+			title: e.target.title.value,	
+			img: e.target.img.value,
+			article: e.target.article.value
+		};
+		blogs.push(blog);
+		localStorage.setItem("blogs", JSON.stringify(blogs));
+
+		e.target.reset();
+	});
+
+	displayBlogs();
+});
+// function displayBlogs(){
+
+// const blogINfo = document.querySelector(".myDiv");
+
+// blogINfo.innerHTML = blogs
+// .map(
+// (el, index) => 
+// `<div class="myDiv">
+// <div class="flex-content">
+// 	<div class="">
+// 		<img src="${el.img}" width="270" height="300">
+// 	</div>
+
+// 	<div class="blog-content">
+// 		<div class="">
+// 			<h3 class="">${el.article}</h3>
+// 		</div>
+// 		<p>${el.article}.</p>
+// 		<p class="">Read more...</p>
+// 	</div>
+// </div>
+// </div>`
+
+// )
+// .join("");
+// }
+	</script>
 	<script src="script.js"></script>	
 	</body>
 
