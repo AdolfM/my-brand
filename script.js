@@ -54,7 +54,7 @@ if (loginInForm && loginInForm !== "undefined"){
 		const savedUser = JSON.parse(localStorage.getItem('form-base'))
 		if (savedUser.username === username && savedUser.password === password) {
 			if (savedUser.role === "admin") {
-				window.location.href="admin/dashboard.html"
+				window.location.href="/admin/dashboard.html"
 			}
 			else {
 				window.location.href="blog.html"
