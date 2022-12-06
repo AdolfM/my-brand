@@ -30,7 +30,7 @@ if (signUpForm && signUpForm !== "undefined") {
 
 			username === "Adolf123" ? newUser.role = "admin" : newUser.role = "user"
 			// add newUser to array of the form-base
-			//newUser.push(form-base);
+			newUser.push(savedUser);
 		 	localStorage.setItem('form-base', JSON.stringify(newUser))
 		 	alert('Successfully registered')
 		 	window.location.href="login.html"
@@ -38,7 +38,6 @@ if (signUpForm && signUpForm !== "undefined") {
 	})
 }
 
- 
 if (loginInForm && loginInForm !== "undefined"){
 	loginInForm.addEventListener('submit', (e) => {
 		e.preventDefault()
@@ -47,7 +46,7 @@ if (loginInForm && loginInForm !== "undefined"){
 			document.querySelector('#password').value
 		]
 		// required & validation
-		if (!username || !password) {
+		if (!username || !password) 
 		alert("Please fill the form")
 			return
 				}

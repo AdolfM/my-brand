@@ -31,32 +31,35 @@
 						<input type="text" id="title" class="dashboard-inp" name="" placeholder="ARTICLE #:.......">
 					</div>
 					<div class=""> 
-						<h3> ADD IMAGE:</h3>
-						<input type="file" id="img" class="dashboard-inp" accept="image/*">
+						<h3> ADD IMAGE URL:</h3>
+						<input type="text" id="img" class="dashboard-inp" placeholder="Add image url....">
+					</div>
+					<div class=""> 
+						<h3>WRITE AN INTRODUCTION OF YOUR ARTICLE</h3>
+						<textarea id="intro" class="dashboard-inp" cols="30" rows="3" placeholder="In few words, describe your article...."></textarea>
 					</div>
 					<div class=""> 
 						<h3>WRITE THE ARTICLE HERE</h3>
-						<textarea id="article" class="dashboard-inp" cols="30" rows="7" placeholder="Write the article here..."></textarea>
+						<textarea id="article" class="dashboard-inp" cols="30" rows="7" placeholder="Write full article article..."></textarea>
 					</div>
-					<div>
+					<div class="flex-content">
+						<div>
 						<input type="submit" class="log-bot" value="PUBLISH">
 						</div>
+						<div><button class="edit-but">Edit</button></div>
+							<div><button class="delete-but">Delete</button></div>
+					</div>
 					</form>
-			</div>
+					</div>
 
 					<div class="">
 						<h2>PUBLISHED ARTICLES</h2>						
 					</div>
-					<hr>
-					<div class="blog-js flex-content">
-						<div class="action-panel">Title</div>
-						<div class="action-panel">Author</div>
-						<div class="action-panel">Article</div>
-						<div class="action-panel">Action
-							<div><button class="edit-but">Edit</button></div>
-							<div><button class="delete-but">Delete</button></div>
+					<div class="intro-dash">
 
-						</div>
+						
+					</div>
+					<hr>
 
 
 					</div>
@@ -69,6 +72,7 @@
 
 	const title = document.getElementById("title");
 	const img = document.getElementById("img");
+	const intro = document.getElementById("intro");
 	const article = document.getElementById("article");
 	const addBlogForm = document.querySelector("#blog-form");
 
@@ -77,6 +81,7 @@
 		const blog = {
 			title: e.target.title.value,	
 			img: e.target.img.value,
+			intro: e.target.intro.value,
 			article: e.target.article.value
 		};
 		blogs.push(blog);
@@ -87,32 +92,26 @@
 
 	displayBlogs();
 });
-// function displayBlogs(){
+function displayBlogs(){
 
-// const blogINfo = document.querySelector(".myDiv");
+const blogINfo = document.querySelector(".intro-dash");
 
-// blogINfo.innerHTML = blogs
-// .map(
-// (el, index) => 
-// `<div class="myDiv">
-// <div class="flex-content">
-// 	<div class="">
-// 		<img src="${el.img}" width="270" height="300">
-// 	</div>
+blogINfo.innerHTML = blogs
+.map(
+(el, index) => 
+`
+<div>
+	<h3>Title:${el.title}</h3>
+</div>
+<div>
+<h3>Introduction:</h3><p>${el.intro}</p>	
+</div>
+<br>
+`
 
-// 	<div class="blog-content">
-// 		<div class="">
-// 			<h3 class="">${el.article}</h3>
-// 		</div>
-// 		<p>${el.article}.</p>
-// 		<p class="">Read more...</p>
-// 	</div>
-// </div>
-// </div>`
-
-// )
-// .join("");
-// }
+)
+.join("");
+}
 	</script>
 	<script src="script.js"></script>	
 	</body>

@@ -67,7 +67,35 @@
 			</div>				
 						</section>
 						<script>
+							window.localStorage.getItem('blogs');
+							JSON.parse(window.localStorage.getItem('blogs'));
 
+							const blogINfo = document.querySelector(".myDiv");
+
+							blogINfo.innerHTML = blogs
+							.map(
+							(el, index) => 
+							`
+							<div class="flex-content">
+								<div class="">
+									<img src="${el.img}" width="270" height="300">
+								</div>
+
+								<div class="blog-content">
+									<div class="">
+										<h3 class="">${el.title}</h3>
+									</div>
+									<p>${el.intro}.</p>
+									<p class="">Read more...</p>
+								</div>
+							</div>
+						</div>
+						<br>
+							`
+
+							)
+							.join("");
+							
 						</script>
 					<script src="script.js"></script>
 		</body>

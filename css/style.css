@@ -85,15 +85,15 @@ body {
     display: none;
 }
 
- @media only screen and (max-width: 600px){
+ @media only screen and (max-width: 700px){
 	.flex-content {
 		flex-direction: column;
 		margin-left: 0;
 	}
 
 .bg-photo {
-	margin-left: 15%;
-	width: 100%;
+	margin-left: 5%;
+	width: 80%;
 	}
 .cover-page {
 	width: ;
@@ -102,15 +102,20 @@ body {
 	width: 100%;
 	}
 .about-content {
-	margin-left: 5%;	
+	margin-left: 5%;
 	}
+.long-text {
+	width: 80%;
+	margin-left: -10%;
+}
 
 
  }
-//** END OF RESPONSIVENESS**//
+/** END OF RESPONSIVENESS**/
+
 .about-content {
 	width: 500px;
-	margin-left: 20%;
+	margin-left: 25%;
 }
 
 .message-content {
@@ -255,9 +260,10 @@ body {
 	text-decoration: none;
 }
 
-.blog-js {
-		width: 70%;
-		margin-left: 15%;
+.intro-dash {
+	width: 100%;
+	padding: 1%;
+	background-color:rgb(72, 77, 105);
 }
 
 .site-heading {
@@ -277,6 +283,7 @@ body {
 .action-panel {
 	width: 100%;
 	height: 200px;
+	background-color: #ccc;
 
 }
 
