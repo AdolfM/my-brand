@@ -46,7 +46,6 @@ body {
 }
 
 .container {
-	position: ;
 	text-align: center;
 }
 
@@ -74,6 +73,14 @@ body {
 	display: flex;
 
 }
+
+.mini-blog {
+	width: 80%;
+	height: auto;
+	display: flex;
+
+
+}
 .warning {
     padding: 10px;
     text-align: center;
@@ -95,9 +102,7 @@ body {
 	margin-left: 5%;
 	width: 80%;
 	}
-.cover-page {
-	width: ;
-	}
+
 .edu-div {
 	width: 100%;
 	}
@@ -250,7 +255,6 @@ body {
 
 
 .blog-div{
-	background-color: ;
 	width: 70%;
 	margin-left: 15%;
 }

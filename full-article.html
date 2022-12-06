@@ -22,46 +22,18 @@
 
 			<div class="blog-div">
 							<div class="blog-title">
-						 <h1 class="centered-header">Read our Blog online</h1>
+						 <h1 class="centered-header">Read Full article</h1>
 				 		</div>
 	
-						
-						<div class="myDiv">
-								
-						</div>
-						<br>
-		
-						</section>
+	
 						<script>
-							window.localStorage.getItem('blogs');
-							let blogs = JSON.parse(window.localStorage.getItem('blogs'));
+                            let paramString = urlString.split('?')[1];
+                            let queryString = new URLSearchParams(paramString);
 
-							const blogINfo = document.querySelector(".myDiv");
-
-							blogINfo.innerHTML = blogs
-							.map(
-							(el, index) => 
-							`
-							<div class="flex-content">
-								<div class="">
-									<img src="${el.img}" width="270" height="300">
-								</div>
-
-								<div class="blog-content">
-									<div class="">
-										<h3 class=""><a href="">${el.title}</a></h3>
-									</div>
-									<p>${el.intro}.</p>
-									<p class=""><a href="">Read more...</a></p>
-								</div>
-							</div>
-						</div>
-						<br>
-							`
-
-							)
-							.join("");
-							
+                            for (let pair of queryString.entries()) {
+                            console.log("Key is: " + pair[0]);
+                            console.log("Value is: " + pair[1]);
+}
 						</script>
 					<script src="script.js"></script>
 		</body>
