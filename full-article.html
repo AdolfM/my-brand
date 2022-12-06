@@ -27,12 +27,21 @@
 	
 	
 						<script>
+                            let fullMode = document.querySelector('.single-post')
+                            if (localStorage.getItem('blogs') !=null){
+                                var blog =JSON.parse(localStorage.getItem('blogs'));
+                            } 
+                            else{
+                                var blogs = [];
+                            }
+
+                            let urlString = window.location.href;
                             let paramString = urlString.split('?')[1];
                             let queryString = new URLSearchParams(paramString);
-
-                            for (let pair of queryString.entries()) {
-                            console.log("Key is: " + pair[0]);
-                            console.log("Value is: " + pair[1]);
+                            for ( let pair of queryString.entries()){
+                                var post_id = pair[1];
+                            }
+                            
 }
 						</script>
 					<script src="script.js"></script>
