@@ -1,0 +1,315 @@
+
+body {
+    color: white;
+  	background: #222;
+  	line-height: 1.7;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 90%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.navbar a.active {
+  background: #ddd;
+  color: black;
+}
+
+.navbar-right {
+  float: right;
+}
+
+.cover-page {
+	width: 100%;
+}
+
+.container {
+	text-align: center;
+}
+
+.centered {
+	position: absolute;
+	top: 40%;
+	right: 30%;
+}
+
+.centered-header{
+	text-align: center;
+	margin-top: 5%;
+
+}
+
+.bg-photo {
+	margin-left: 35%;
+	border-top-left-radius: 70px;
+	border-bottom-left-radius: 70px;
+}
+
+.flex-content {
+	width: 80%;
+	height: auto;
+	display: flex;
+
+}
+
+.mini-blog {
+	width: 80%;
+	height: auto;
+	display: flex;
+
+
+}
+.warning {
+    padding: 10px;
+    text-align: center;
+    background: #dc3545;    
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+ @media only screen and (max-width: 700px){
+	.flex-content {
+		flex-direction: column;
+		margin-left: 0;
+	}
+
+.bg-photo {
+	margin-left: 5%;
+	width: 80%;
+	}
+
+.edu-div {
+	width: 100%;
+	}
+.about-content {
+	margin-left: 5%;
+	}
+.long-text {
+	width: 80%;
+	margin-left: -10%;
+}
+
+
+ }
+/** END OF RESPONSIVENESS**/
+
+.about-content {
+	width: 500px;
+	margin-left: 25%;
+}
+
+.message-content {
+	column-gap: 200px;
+}
+
+.left-content {
+	margin-left: 10%;
+}
+
+.edu-div {
+	background-color: #333;
+	height: auto;
+	border-radius: 12px;
+	padding: 10px;
+	margin-top: 10px;
+}
+.edu-spacing {
+	column-gap: 40px;
+}
+
+.port-spacing {
+	margin-left: 5%;
+	text-align: center;
+	column-gap: 30px;
+}
+
+.input-con {
+	width: 350px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: rgb(66, 71, 79);
+  color: rgb(172, 170, 181);
+}
+
+.text-con {
+	width: 395px;
+	resize: none;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-sizing: border-box;
+	background-color: rgb(66, 71, 79);
+	color: rgb(172, 170, 181);
+}
+
+
+.foot-bar {
+	text-align: center;
+	margin-top: 5%;
+	padding: 12px;
+
+}
+
+.no-bullet {
+	  list-style-type: none;
+ 	  display: inline-block;
+}
+
+.mav li{
+  text-align: center;
+  display: inline-block;
+  min-width: 5em;
+}
+
+.input-div {
+	margin-left: 50%;
+}
+
+.button2 {
+	text-align: center;
+	background-color: skyblue;
+	width: 100px;
+	border-radius: 12px;
+	height: 50px;
+}
+
+.form-log {
+	width: 30%;
+	margin-top: 10%;
+	margin-left: 30%;
+	text-align: center;
+	background-color: #333;	
+	border-top-left-radius: 80px;
+	border-bottom-right-radius: 80px;
+}
+
+.dashboard-inp {
+	width: 70%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-sizing: border-box;
+	background-color: rgb(66, 71, 79);
+  color: rgb(172, 170, 181);
+}
+
+.label-type {
+	font-size: 20px;
+}
+
+.log-bot {
+	text-align: center;
+	background-color: skyblue;
+	width: 100px;
+	border-radius: 12px;
+	height: 50px;
+	margin-top: 2%;
+}
+
+.blog-page {
+	margin-left: 38%;
+	margin-top: 3%;
+
+}
+
+.myDiv {
+	background-color: #333;
+	width: 80%;
+}
+
+.blog-content {
+	padding: 1px 20px  35px;
+}
+
+
+.blog-div{
+	width: 70%;
+	margin-left: 15%;
+}
+
+.link-div {
+	color: antiquewhite;
+	text-decoration: none;
+}
+
+.intro-dash {
+	width: 100%;
+	padding: 1%;
+	background-color:rgb(72, 77, 105);
+}
+
+.site-heading {
+		font-size: 40px;
+}
+
+.small-class {
+		color: rgb(156, 158, 98);
+}
+
+.opaq-class {
+	opacity: 70%;
+	font-size: 13px;
+
+}
+
+.action-panel {
+	width: 100%;
+	height: 200px;
+	background-color: #ccc;
+
+}
+
+.edit-but {
+	background-color: skyblue;
+	width: 100px;
+	height: 50px;
+	border-radius: 12px;
+}
+
+.delete-but {
+	background-color: red;
+	color: white;
+	width: 100px;
+	height: 50px;
+	border-radius: 12px;
+	margin-top: 10%;
+}
+
+a {
+	text-decoration: none;
+	color: greenyellow;
+}
+
+
