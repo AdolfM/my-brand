@@ -51,7 +51,7 @@ if (loginInForm && loginInForm !== "undefined") {
 		for (const person of savedUser) {
 			if (person.username === username && person.password === password) {
 				if (person.role === "admin") {
-					window.location.href = "/admin/dashboard.html"
+					window.location.href = "my-brand/admin/dashboard.html"
 				}
 				else {
 					window.location.href = "blog.html"
